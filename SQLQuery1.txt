@@ -1,0 +1,89 @@
+
+CREATE TABLE [dbo].[user] (
+    [userID] INT IDENTITY (1, 1) NOT NULL,
+    [userFirstName] VARCHAR (20) NOT NULL,
+	[userLastName] VARCHAR (20) NOT NULL,
+	[userEmail] VARCHAR (50) NOT NULL,
+    [userPassword] VARCHAR(20) NOT NULL,
+	[userPhoneNumber] VARCHAR(15) NOT NULL,
+	[type] bit NOT NULL,
+    CONSTRAINT [PK_user] PRIMARY KEY CLUSTERED ([userID] ASC)
+);
+
+CREATE TABLE [dbo].[truck] (
+	[truckID] INT IDENTITY (1, 1) NOT NULL,
+    [truckName] VARCHAR (40)  NOT NULL,
+    [trucklocation] VARCHAR (100) CONSTRAINT [DF_truck_location] DEFAULT ('Closed') NULL,
+	[truckInfo] TEXT CONSTRAINT [DF_truck_truckBio] DEFAULT ('Bio hasn''t been updated.') NOT NULL,
+	CONSTRAINT [PK_truck] PRIMARY KEY CLUSTERED ([truckID] ASC)
+);
+
+CREATE TABLE [dbo].[review] (
+    [reviewID] INT IDENTITY (1, 1) NOT NULL,
+    [comment] TEXT,
+    [rating] INT        NOT NULL,
+    PRIMARY KEY CLUSTERED ([reviewID] ASC)
+);
+
+CREATE TABLE [dbo].[menu] (
+	[itemID] INT IDENTITY (1,1) NOT NULL,
+	[price] VARCHAR(3) NOT NULL,
+	[itemName] VARCHAR(10) NOT NULL,
+	[item Description] TEXT NOT NULL
+);
+
+--------------------------------------------------------------------------------
+
+CREATE TABLE appUsers (
+    [userPhoneNumber] VARCHAR(15) NOT NULL PRIMARY KEY,
+    [userFullName] VARCHAR (20) NOT NULL,
+	[userEmail] VARCHAR (50) NOT NULL,
+    [userPassword] VARCHAR(20) NOT NULL,
+	[type] VARCHAR(10) NOT NULL,
+); 
+
+********************************************************************
+
+CREATE TABLE appTruck (
+	[truckID] INT IDENTITY (1, 1) NOT NULL,
+    [truckName] VARCHAR (40)  NOT NULL,
+    [trucklocation] VARCHAR (100) CONSTRAINT [DF_truck_location] DEFAULT ('Closed') NOT NULL,
+	[truckInfo] TEXT CONSTRAINT [DF_truck_truckBio] DEFAULT ('Bio hasnt been updated.') NOT NULL,
+	truckLatitude FLOAT(8) NOT NULL, truckLongitude FLOAT(8) NOT NULL,
+	userPhoneNumber VARCHAR(15),
+    FOREIGN KEY (userPhoneNumber) REFERENCES appUsers(userPhoneNumber),
+    CONSTRAINT [PK_truck] PRIMARY KEY CLUSTERED ([truckID] ASC)
+);
+
+ALTER TABLE appTruck ADD UNIQUE(truckName);
+
+_____________________________________________________________________
+
+CREATE TABLE appReview ( 
+userPhoneNumber VARCHAR(15) NOT NULL,
+userFullName VARCHAR(15) NOT NULL,
+truckName VARCHAR(40),
+userComments VARCHAR(300) NOT NULL,
+[userRating] float(5) NOT NULL,
+FOREIGN KEY (userPhoneNumber) REFERENCES appUsers(userPhoneNumber),
+//FOREIGN KEY (truckName) REFERENCES appTruck(truckName),
+);
+
+Alter table appTruck
+add unique (truckName);
+######################################################################
+
+Create Table appSchedule(
+userPhoneNumber Varchar(15) not null,
+truckName varchar(40) not null,
+truckLocation varchar(100) not null, 
+time varchar(5) not null, date varchar(12) not null,
+description varchar(250) not null,
+FOREIGN KEY (userPhoneNumber) REFERENCES appUsers(userPhoneNumber),
+FOREIGN KEY (truckName) REFERENCES appTruck(truckName),
+); 
+
+----------------------------------------------------------------------
+
+
+
