@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "687333079714",
+    "firebase_url": "https://food-a0723.firebaseio.com",
+    "project_id": "food-a0723",
+    "storage_bucket": "food-a0723.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687333079714:android:68308cf3ac4de944",
+        "android_client_info": {
+          "package_name": "com.ganeshnomula.food"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "687333079714-uppepn1u0k3e96tj2ppebrri7fti23st.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ganeshnomula.food",
+            "certificate_hash": "93c36657f4d85251991e5a231a2a7413bbcaf66f"
+          }
+        },
+        {
+          "client_id": "687333079714-l8l2q577o5d0bqqd20mprks2tq6u3u0e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYycf35KbqOrWp9osqy6q0gCokvAIgHro"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "687333079714-l8l2q577o5d0bqqd20mprks2tq6u3u0e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

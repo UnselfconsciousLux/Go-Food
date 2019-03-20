@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">food</string>
+    <string name="SignIn">Sign In</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="SignInTitle">Go get some food, Go!</string>
+    <string name="SignUpTitle">Create Your Account</string>
+    <string name="Phonenum">Phone Number</string>
+    <string name="Fullname">Full Name</string>
+    <string name="Password">Password</string>
+    <string name="EMail">E-Mail</string>
+
+    <string name="Vendor">Vendor</string>
+    <string name="Customer">Customer</string>
+    <string name="VendorDashboardTitle">Truck Info</string>
+    <string name="title_activity_welcome_user">Map</string>
+    <string name="Update">Update</string>
+    <string name="UpdateLocationTitle">Update Location</string>
+    <string name="LocationDetails">Location Details</string>
+    <string name="ReadReviewsTitle">Recent Comments</string>
+
+
+</resources>

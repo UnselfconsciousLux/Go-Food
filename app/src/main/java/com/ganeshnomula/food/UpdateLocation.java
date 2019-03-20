@@ -1,0 +1,15 @@
+package com.ganeshnomula.food;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.Toast;
+
+public class UpdateLocation extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_update_location);
+        Toast.makeText(this,"You're in Update Location", Toast.LENGTH_SHORT).show();
+    }
+}
